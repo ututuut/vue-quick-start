@@ -6,9 +6,12 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import store from './store'
+import VueWebsocket from 'vue-websocket'
+import webSocketUrl from 'store/config'
 
 Vue.config.productionTip = false
 Vue.use(VueAxios, axios)
+Vue.use(VueWebsocket, webSocketUrl)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -1,6 +1,7 @@
 import Vue from 'vue'
+import networkUrl from '../../store/config'
 
-let baseUrl = ''
+let baseUrl = networkUrl
 export function post (url, params, dothing) {
   let param = new URLSearchParams()
   let webUrl = baseUrl + url

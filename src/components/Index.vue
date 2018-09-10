@@ -90,6 +90,9 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  created: function () {
+    throw new Error('用户自定义异常信息')
   }
 }
 </script>

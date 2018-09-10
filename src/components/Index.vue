@@ -84,6 +84,8 @@
 </template>
 
 <script>
+import Storage from '../assets/plus/localStorage'
+
 export default {
   name: 'HelloWorld',
   data () {
@@ -92,6 +94,9 @@ export default {
     }
   },
   created: function () {
+    let storage = new Storage()
+    storage.save('111', '2222')
+    console.log(storage.select('111'))
     throw new Error('用户自定义异常信息')
   }
 }

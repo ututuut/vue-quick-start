@@ -8,7 +8,6 @@ import VueAxios from 'vue-axios'
 import store from './store'
 import VueWebsocket from 'vue-websocket'
 import webSocketUrl from './store/config'
-import {error} from './assets/plus/error/error'
 
 Vue.config.productionTip = false
 Vue.use(VueAxios, axios)

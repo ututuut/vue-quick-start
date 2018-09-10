@@ -13,13 +13,14 @@ Vue.config.productionTip = false
 Vue.use(VueAxios, axios)
 Vue.use(VueWebsocket, webSocketUrl)
 
-Vue.config.errorHandler = function (err, vm, info) {
+Vue.config.errorHandler =  (err, vm, info)=> {
   // handle error
   // `info` 是 Vue 特定的错误信息，比如错误所在的生命周期钩子
   // 只在 2.2.0+ 可用
   console.log(err)
   console.log(vm)
   console.log(info)
+  console.log(vm.$route.path)
 }
 
 /* eslint-disable no-new */

@@ -7,13 +7,21 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import store from './store'
 import VueWebsocket from 'vue-websocket'
-import webSocketUrl from './store/config'
+import {webSocketUrl} from './store/config'
+import {lang} from './store/lang'
+import VueI18n from 'vue-i18n'
 
 Vue.config.productionTip = false
 Vue.use(VueAxios, axios)
 Vue.use(VueWebsocket, webSocketUrl)
+Vue.use(VueI18n)
 
-Vue.config.errorHandler =  (err, vm, info)=> {
+let i18n = new VueI18n({
+  locale: 'en',
+  messages: lang
+})
+
+Vue.config.errorHandler = (err, vm, info) => {
   // handle error
   // `info` 是 Vue 特定的错误信息，比如错误所在的生命周期钩子
   // 只在 2.2.0+ 可用
@@ -26,6 +34,7 @@ Vue.config.errorHandler =  (err, vm, info)=> {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  i18n,
   router,
   store,
   components: { App },

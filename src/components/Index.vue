@@ -1,14 +1,14 @@
 <template>
   <div class="hello">
     <h1>{{ this.$store.state.userInfo.show }}</h1>
-    <h2>Essential Links</h2>
+    <h2>{{ $t('model1.hello') }}</h2>
     <ul>
       <li>
         <a
           href="https://vuejs.org"
           target="_blank"
         >
-          Core Docs
+          {{this.$i18n.locale}}
         </a>
       </li>
       <li>
@@ -97,7 +97,7 @@ export default {
     let storage = new Storage()
     storage.save('111', '2222')
     console.log(storage.select('111'))
-    throw new Error('用户自定义异常信息')
+    //throw new Error('用户自定义异常信息')
   }
 }
 </script>

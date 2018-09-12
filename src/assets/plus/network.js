@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import networkUrl from '../../store/config'
+import {networkUrl} from '../../store/config'
 
 let baseUrl = networkUrl
 export function post (url, params, dothing) {
